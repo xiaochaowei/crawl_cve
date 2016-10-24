@@ -101,7 +101,7 @@ with open('extract_cves.csv' ,'r') as f:
 		result = get_cve_url(cve)
 		if not result == None:
 			tmp = "@:".join(result) + "\n"    
-        out.write( cve + "@:" + tmp)
-        out.flush()
+		out.write( cve + "@:" + tmp)
+		out.flush()
 out.close()
 
