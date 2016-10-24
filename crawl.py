@@ -90,14 +90,18 @@ def run():
  			#basic information 
 			crawl_cve_info(cve_url)
 			# break
+
+
 tmp = ""
+out =  open('cve_detail', 'w+', 0)
 with open('extract_cves.csv' ,'r') as f:
 	rows = f.read().strip().split('\n')
 	for cve in rows:
 		print "cve", cve
 		result = get_cve_url(cve)
 		if not result == None:
-			tmp += "@:".join(result) + "\n"
-			print tmp
-			sys.stdout.flush()
+			tmp = "@:".join(result) + "\n"    
+        out.write( cve + "@:" + tmp)
+        out.flush()
+out.close()
 
