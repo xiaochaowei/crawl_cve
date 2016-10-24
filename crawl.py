@@ -99,5 +99,5 @@ with open('extract_cves.csv' ,'r') as f:
 		if not result == None:
 			tmp += "@:".join(result) + "\n"
 			print tmp
-            sys.stdout.flush()
+			sys.stdout.flush()
 
