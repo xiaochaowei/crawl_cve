@@ -3,6 +3,7 @@ from StringIO import StringIO
 from bs4 import BeautifulSoup
 import urllib2
 import requests
+import sys
 
 def ungzip(data):		
 	buf = StringIO(data)		
@@ -98,3 +99,5 @@ with open('extract_cves.csv' ,'r') as f:
 		if not result == None:
 			tmp += "@:".join(result) + "\n"
 			print tmp
+            sys.stdout.flush()
+
